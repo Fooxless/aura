@@ -11,7 +11,6 @@ import * as SplashScreen from 'expo-splash-screen';
 
 export default function App() {
   // Adding custom fonts
-  // test PR
   const [fontsLoaded] = useFonts({
     BlackOps: require('../aura/assets/fonts/BlackOpsOne-Regular.ttf'),
   });
