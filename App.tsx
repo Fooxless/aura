@@ -11,6 +11,7 @@ import * as SplashScreen from 'expo-splash-screen';
 
 export default function App() {
   // Adding custom fonts
+  // On app store: https://www.instabug.com/blog/react-native-app-ios-android
   const [fontsLoaded] = useFonts({
     BlackOps: require('../aura/assets/fonts/BlackOpsOne-Regular.ttf'),
   });
