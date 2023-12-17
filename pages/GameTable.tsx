@@ -9,9 +9,12 @@ import { HomeStackNavigatorParamList } from '../App';
 
 export type GameTableProps = NativeStackScreenProps<HomeStackNavigatorParamList, 'GameTable'>;
 
-export default function GameTable({ navigation }: GameTableProps) {
+export default function GameTable({ navigation, route }: GameTableProps) {
   const [visible, setVisible] = useState<boolean>(false);
   const theme = useAppTheme();
+  const { healthPoints } = route.params;
+
+  console.log('healthPoints', healthPoints);
 
   const containerStyle = {
     backgroundColor: 'white',
@@ -37,8 +40,16 @@ export default function GameTable({ navigation }: GameTableProps) {
           flexDirection: 'column',
         }}
       >
-        <PlayerSection backgroundColor={theme.colors.playerColours.darkBlue} />
-        <PlayerSection backgroundColor={theme.colors.playerColours.green} />
+        <PlayerSection
+          backgroundColor={theme.colors.playerColours.darkBlue}
+          healthPoints={healthPoints}
+          isRight={false}
+        />
+        <PlayerSection
+          backgroundColor={theme.colors.playerColours.green}
+          healthPoints={healthPoints}
+          isRight={false}
+        />
       </View>
       {/* Right */}
       <View
@@ -49,13 +60,20 @@ export default function GameTable({ navigation }: GameTableProps) {
           flexDirection: 'column',
         }}
       >
-        <PlayerSection backgroundColor={theme.colors.playerColours.orange} />
-        <PlayerSection backgroundColor={theme.colors.playerColours.grey} />
+        <PlayerSection
+          backgroundColor={theme.colors.playerColours.orange}
+          healthPoints={healthPoints}
+          isRight={true}
+        />
+        <PlayerSection
+          backgroundColor={theme.colors.playerColours.grey}
+          healthPoints={healthPoints}
+          isRight={true}
+        />
       </View>
       <View
         style={{
           position: 'absolute',
-
           alignSelf: 'center',
         }}
       >

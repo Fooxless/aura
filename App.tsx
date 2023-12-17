@@ -8,6 +8,7 @@ import { customTheme } from './components/theme';
 import { useFonts } from 'expo-font';
 import { useEffect } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
+import LifeSettingScreen from './pages/LifeSettingScreen';
 
 export default function App() {
   // Adding custom fonts
@@ -44,6 +45,7 @@ export default function App() {
         >
           <HomeStack.Screen name="HomeScreen" component={HomeScreen} />
           <HomeStack.Screen name="GameTable" component={GameTable} />
+          <HomeStack.Screen name="LifeSettingScreen" component={LifeSettingScreen} />
         </HomeStack.Navigator>
       </NavigationContainer>
     </PaperProvider>
@@ -52,5 +54,6 @@ export default function App() {
 
 export type HomeStackNavigatorParamList = {
   HomeScreen: undefined;
-  GameTable: undefined;
+  GameTable: { healthPoints: number };
+  LifeSettingScreen: undefined;
 };

@@ -4,10 +4,16 @@ import { useAppTheme } from '../theme';
 
 interface HpTotalSectionProps {
   backgroundColor: string;
+  healthPoints: number;
+  isRight: boolean;
 }
 
-export default function HpTotalSection({ backgroundColor }: HpTotalSectionProps) {
-  const [count, setCount] = useState<number>(40);
+export default function HpTotalSection({
+  backgroundColor,
+  healthPoints,
+  isRight,
+}: HpTotalSectionProps) {
+  const [count, setCount] = useState<number>(healthPoints);
   const theme = useAppTheme();
 
   return (
@@ -55,7 +61,7 @@ export default function HpTotalSection({ backgroundColor }: HpTotalSectionProps)
       <View
         style={{
           position: 'absolute',
-          transform: 'rotate(90deg)',
+          transform: isRight ? 'rotate(-90deg)' : 'rotate(90deg)',
           alignSelf: 'center',
         }}
       >

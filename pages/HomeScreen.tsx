@@ -36,7 +36,7 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
         textColor="black"
         contentStyle={{ width: '80%', height: 60, alignSelf: 'center' }}
         labelStyle={{ fontSize: 20 }}
-        onPress={() => navigation.navigate('GameTable')}
+        onPress={() => navigation.navigate('LifeSettingScreen')}
       >
         Start Game
       </Button>

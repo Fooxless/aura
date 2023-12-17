@@ -3,9 +3,15 @@ import HpTotalSection from './HpTotalScreen';
 
 interface PlayerSectionProps {
   backgroundColor: string;
+  healthPoints: number;
+  isRight: boolean;
 }
 
-export default function PlayerSection({ backgroundColor }: PlayerSectionProps) {
+export default function PlayerSection({
+  backgroundColor,
+  healthPoints,
+  isRight,
+}: PlayerSectionProps) {
   return (
     <View
       style={{
@@ -21,7 +27,11 @@ export default function PlayerSection({ backgroundColor }: PlayerSectionProps) {
         style={{
           flex: 1,
         }}> */}
-      <HpTotalSection backgroundColor={backgroundColor} />
+      <HpTotalSection
+        backgroundColor={backgroundColor}
+        healthPoints={healthPoints}
+        isRight={isRight}
+      />
       {/* </GestureRecognizer> */}
       {/* Add player settings section */}
     </View>
